@@ -69,25 +69,25 @@ def main():
     """
     main
     """
-    parser = argparse.ArgumentParser(description='PC stats')
+    parser = argparse.ArgumentParser(description='PC stats', add_help=True)
     parser.add_argument(
         '--start_day',
-        help='start day of this cycle (DD/MM/YYYY)'
+        help='set the start day of this cycle (DD/MM/YYYY)'
     )
     parser.add_argument(
         '--bank',
         type=int,
-        help='count in the bank (INT)'
+        help='set the count in the bank (INT)'
     )
     parser.add_argument(
         '--count',
         type=int,
-        help='count for today (INT)',
+        help='set the count for today (INT)',
     )
     parser.add_argument(
         '--rest_day',
         action='store_true',
-        help='resigster rest day'
+        help='resigster today as a rest day'
     )
     args = parser.parse_args()
     bank, rest_days_used, start_day = read_bank_file()
